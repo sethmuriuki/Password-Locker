@@ -20,7 +20,7 @@ class TestUser(unittest.TestCase):
         method to run before each test case
         '''
 
-        self.new_user = User("seth","password")
+        self.new_user = User("seth","password","0705162182")
 
     def tearDown(self):
         '''
@@ -37,6 +37,7 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(self.new_user.user_name,"seth")
         self.assertEqual(self.new_user.password,"password")
+        self.assertEqual(self.new_user.number,"0705162182")
 
     def test_save_user(self):
 
@@ -54,7 +55,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("user","root") 
+        test_user = User("user","root","0790478002") 
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
         
@@ -66,24 +67,24 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("user", "root")
+        test_user = User("user", "root","0790478002")
         test_user.save_user()
         self.new_user.delete_user() #to delete a user object
         self.assertEqual(len(User.user_list),1)
 
 
-    def test_find_user_by_username(self):
+    def test_find_user_by_number(self):
 
         '''
         test to check if we can find a user by the user name and display information
         '''
 
         self.new_user.save_user()
-        test_user = User("ralph","root")
+        test_user = User("ralph","root","0700111000")
         test_user.save_user()
-        found_user = User.find_by_username("ralph")
-        self.assertEqual(found_user.email,test_user.password)
-        
+        found_user = User.find_by_number("0700111000")
+        self.assertEqual(found_user.user_name,test_user.password)
+
 
 
 
