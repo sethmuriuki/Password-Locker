@@ -223,167 +223,167 @@ def main():
                     print("Invalid code")
                     continue
        
-    #    elif short_code == 'lg':
-    #        print("welcome")
-    #        print("Enter user name")
-    #        default_user_name = input()
+        elif short_code == 'lg':
+           print("welcome")
+           print("Enter user name")
+           default_user_name = input()
 
 
-    #        print("Enter user name")
-    #        default_user_name = input()
-    #        print('\n')
+           print("Enter user name")
+           default_user_name = input()
+           print('\n')
 
-    #        while default_user_name != 'testuser' or default_user_password != '09876':
-    #            print("Wrong userName or password. Username 'testuser' and password '09876'")
-    #            print("Enter user name")
-    #            default_user_name = input()
+        while default_user_name != 'testuser' or default_user_password != '09876':
+            print("Wrong userName or password. Username 'testuser' and password '09876'")
+            print("Enter user name")
+            default_user_name = input()
 
-    #            print("Enter password")
-    #            default_user_password = input()
-
-
-    #            print("\n")
-
-    #         if default_user_name == 'testuser' and default_user_password == '09876':
-    #             print("Login success")
-    #             print('\n')
-    #             print("select an option to proceed:1,2,3,4,5")
-    #             print('\n')
-
-    #         while True:
-    #             print("1:view your saved credentials")
-    #             print("2:Add new credentials")
-    #             print("3:Remove  credentials")
-    #             print("4:search new credentials")
-    #             print("5:log out")
-    #             option = input()
-
-    #             if option == '2':
-    #                 while True:
-    #                     print("continue to add? y/n")
-
-    #                     choice = input().lower()
-    #                     if choice == 'y':
-    #                         print("Enter account name")
-    #                         account_name = input()
-    #                         print("Enter password")
-    #                         print("To generate random password enter key word 'rp' or 'cp' to create your own password")
-    #                         keyword = input().lower()
-
-    #                         if keyword == 'rp':
-    #                             account_password = random.randint(11111,111111)
-    #                             print(f"Account: {account_name}")
-    #                             print(f"Password: {account_password}")
-    #                             print('\n')
-    #                         elif keyword == 'cp':
-    #                             print("Create your own password password")
-    #                             account_password = input()
-    #                             print(f"Account: {account_name}")
-    #                             print(f"Password: {account_password}")
-    #                             print('\n')
-
-    #                         else:
-    #                             print("Enter a valid code")
+            print("Enter password")
+            default_user_password = input()
 
 
-    #                         save_new_credential(create_new_credential(account_name,account_password))
+            print("\n")
 
-    #                     elif choice == 'cp':
-    #                         break
-    #                     else:
-    #                         print("use 'y' for yes and 'n' for no")
+            if default_user_name == 'testuser' and default_user_password == '09876':
+                print("Login success")
+                print('\n')
+                print("select an option to proceed:1,2,3,4,5")
+                print('\n')
+
+                while True:
+                    print("1:view your saved credentials")
+                    print("2:Add new credentials")
+                    print("3:Remove  credentials")
+                    print("4:search new credentials")
+                    print("5:log out")
+                    option = input()
+
+                    if option == '2':
+                        while True:
+                            print("continue to add? y/n")
+
+                            choice = input().lower()
+                            if choice == 'y':
+                                print("Enter account name")
+                                account_name = input()
+                                print("Enter password")
+                                print("To generate random password enter key word 'rp' or 'cp' to create your own password")
+                                keyword = input().lower()
+
+                                if keyword == 'rp':
+                                    account_password = random.randint(11111,111111)
+                                    print(f"Account: {account_name}")
+                                    print(f"Password: {account_password}")
+                                    print('\n')
+                                elif keyword == 'cp':
+                                    print("Create your own password password")
+                                    account_password = input()
+                                    print(f"Account: {account_name}")
+                                    print(f"Password: {account_password}")
+                                    print('\n')
+
+                                else:
+                                    print("Enter a valid code")
 
 
-    #             elif option == '1':
-    #                 while True:
-    #                     print("This is a list of your credentials")
-                        
-    #                     if display_credential():
+                                save_new_credential(create_new_credential(account_name,account_password))
 
-    #                         for credential in display_credential():
-    #                             print(f"Account Name:{credential.account_name}")
-    #                             print(f"Password:{credential.account_password}")
+                            elif choice == 'cp':
+                                break
+                            else:
+                                print("use 'y' for yes and 'n' for no")
 
-    #                     else:
+
+                    elif option == '1':
+                        while True:
+                            print("This is a list of your credentials")
                             
-    #                         print('\n')
-    #                         print("No credentials available")
-    #                         print('\n')
+                            if display_credential():
 
-    #                     print("Back to menu? y/n")
+                                for credential in display_credential():
+                                    print(f"Account Name:{credential.account_name}")
+                                    print(f"Password:{credential.account_password}")
 
-    #                     back = input().lower()
-                        
-    #                     if back == 'y':
-    #                         break
-    #                     elif back == 'n':
-    #                         continue
-    #                     else:
-    #                         print("invalid option")
-    #                         continue
+                            else:
+                                
+                                print('\n')
+                                print("No credentials available")
+                                print('\n')
 
-    #             elif  option == '5':
-    #                 print("WARNING you will loose your details if you log out.Proceed? y/n")
-    #                 logout = input().lower()
+                            print("Back to menu? y/n")
 
-    #                 if logout == 'y':
-    #                     print("log out success")
-    #                     break
-    #                 elif logout == 'n':
-    #                     continue
+                            back = input().lower()
+                            
+                            if back == 'y':
+                                break
+                            elif back == 'n':
+                                continue
+                            else:
+                                print("invalid option")
+                                continue
+
+                    elif  option == '5':
+                        print("WARNING you will loose your details if you log out.Proceed? y/n")
+                        logout = input().lower()
+
+                        if logout == 'y':
+                            print("log out success")
+                            break
+                        elif logout == 'n':
+                            continue
 
 
-    #             elif  option == '3':
-    #                 while True:
-    #                     print("search for credential to delete")
+                    elif  option == '3':
+                        while True:
+                            print("search for credential to delete")
 
-    #                     search_name = input()
+                            search_name = input()
 
-    #                     if check_existing_credentials(search_name)
-    #                         search_credential = find_credential(search_name)
-    #                         print(f"Account Name: {search_credential.account_name}\n Password: {search_credential.account_password}")
-    #                         print("Delete? y/n")
+                            if check_existing_credentials(search_name):
+                                search_credential = find_credential(search_name)
+                                print(f"Account Name: {search_credential.account_name}\n Password: {search_credential.account_password}")
+                                print("Delete? y/n")
 
-    #                         confirm = input().lower()
-    #                         if confirm == 'y':
-    #                             delete_credential(search_credential)
-    #                             print("Account successfully removed")
-    #                             break
-    #                         elif confirm == 'n':
-    #                             continue
+                                confirm = input().lower()
+                                if confirm == 'y':
+                                    delete_credential(search_credential)
+                                    print("Account successfully removed")
+                                    break
+                                elif confirm == 'n':
+                                    continue
 
-    #                     else:
-    #                         print("Account does not exist")
-    #                         break
-                
-    #             elif option == '4':
-    #                 while True:
-    #                     print("continue? y/n")
-    #                     choice = input().lower()
-    #                     if choice == 'y':
-    #                         print("Enter account name to find credentials")
+                            else:
+                                print("Account does not exist")
+                                break
+                    
+                    elif option == '4':
+                        while True:
+                            print("continue? y/n")
+                            choice = input().lower()
+                            if choice == 'y':
+                                print("Enter account name to find credentials")
 
-    #                         search_name = input()
+                                search_name = input()
 
-    #                         if check_existing_credentials(search_name):
-    #                             search_credential = find_credential(search_name)
-    #                             print(f"Account Name: {search_credential.account_name}\n Password: {search_credential.account_password}")
-    #                         else:
-    #                             print("Account does not exist")
-                        
-    #                     elif choice == 'n':
-    #                         break
-    #                     else:
-    #                         print("Invalid code")
+                                if check_existing_credentials(search_name):
+                                    search_credential = find_credential(search_name)
+                                    print(f"Account Name: {search_credential.account_name}\n Password: {search_credential.account_password}")
+                                else:
+                                    print("Account does not exist")
+                            
+                            elif choice == 'n':
+                                break
+                            else:
+                                print("Invalid code")
 
-    #             else:
-    #                 print("Invalid code")
-    #                 continue
-       
-        elif short_code == 'ex':
-            break
-        else:
-            print("Enter valid code to continue")
+                    else:
+                        print("Invalid code")
+                        continue
+    
+            elif short_code == 'ex':
+                break
+            else:
+                print("Enter valid code to continue")
             
 
                     
